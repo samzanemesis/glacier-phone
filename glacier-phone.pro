@@ -7,9 +7,7 @@ SOURCES += src/glacier-phone.cpp
 OTHER_FILES += qml/glacier-phone.qml \
     qml/cover/CoverPage.qml \
     qml/pages/SecondPage.qml \
-    rpm/glacier-phone.changes.in \
     rpm/glacier-phone.spec \
-    rpm/glacier-phone.yaml \
     translations/*.ts \
     glacier-phone.desktop
 

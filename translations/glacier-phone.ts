@@ -11,7 +11,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Settings</source>
+        <source>Phone</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
