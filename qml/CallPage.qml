@@ -13,10 +13,10 @@ Rectangle{
     color: "#151515"
 
     FontLoader {
-        source: "res/fontawesome-webfont.ttf"
+        source: "/usr/share/glacier-phone/res/fontawesome-webfont.ttf"
     }
     FontLoader {
-        source: "res/ionicons.ttf"
+        source: "/usr/share/glacier-phone/res/ionicons.ttf"
     }
 
     Rectangle{
@@ -37,7 +37,7 @@ Rectangle{
         asynchronous : true
         fillMode: Image.PreserveAspectCrop
         clip: true
-        source: "res/defaultCallerImage.png"
+        source: "/usr/share/glacier-phone/res/defaultCallerImage.png"
     }
 
     Item{

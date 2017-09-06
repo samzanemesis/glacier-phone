@@ -117,10 +117,10 @@ Item {
         }
 
         FontLoader {
-            source: "res/fontawesome-webfont.ttf"
+            source: "/usr/share/glacier-phone/res/fontawesome-webfont.ttf"
         }
         FontLoader {
-            source: "res/ionicons.ttf"
+            source: "/usr/share/glacier-phone/res/ionicons.ttf"
         }
 
         Component {
@@ -133,7 +133,7 @@ Item {
                     implicitHeight: size.dp(50)
                     implicitWidth: size.dp(320)
                     BorderImage {
-                        source: "res/textinput.png"
+                        source: "/usr/share/glacier-phone/res/textinput.png"
                         border.left: size.dp(8)
                         border.right: size.dp(8)
                         anchors.bottom: parent.bottom

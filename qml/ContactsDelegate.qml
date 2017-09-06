@@ -23,14 +23,14 @@ Item {
         width: height
         Image{
             id: callerPictureImage
-            source: "res/tempCallers/" + contactImage
+            source: "/usr/share/glacier-phone/res/tempCallers/" + contactImage
             width: size.dp(75)
             height: width
             anchors.centerIn: parent
             onStatusChanged: {
                 if (status == Image.Error)
                 {
-                    source = "res/defaultContact.png";
+                    source = "/usr/share/glacier-phone/res/defaultContact.png";
                 }
             }
             visible: false
