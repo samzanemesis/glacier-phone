@@ -22,10 +22,7 @@ Item{
         Repeater {
             model: dialerModel
             delegate: Button {
-                style: ButtonStyle {
-                    roundedButton: true
-                    bgColor: "transparent"
-                }
+
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 onClicked: {

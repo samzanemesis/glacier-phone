@@ -33,11 +33,7 @@ Item {
                 height: parent.height
                 Button{
                     anchors.horizontalCenter: parent.horizontalCenter
-                    style: ButtonStyle {
-                        roundedButton: true
-                        bgColor: "#63ad32"
-                        centerColor : "#c7ff94"
-                    }
+
                     width: size.dp(256)
                     height: size.dp(86)
                     Text {
@@ -51,11 +47,6 @@ Item {
             }
 
             Button{
-                x: parent.width - (parent.width/3)
-                style: ButtonStyle {
-                    roundedButton: true
-                    bgColor: "#808080"
-                }
                 width: size.dp(86)
                 height: size.dp(86)
                 Text {
@@ -82,9 +73,7 @@ Item {
 
         Button{
             id: carrierSelection
-            style: ButtonStyle {
-                bgColor: "transparent"
-            }
+
             width: parent.height
             height: width
 
@@ -110,9 +99,7 @@ Item {
         Button{
             id: dialerBackspace
             anchors.right: parent.right
-            style: ButtonStyle {
-                bgColor: "transparent"
-            }
+
             width: parent.height
             height: width
 

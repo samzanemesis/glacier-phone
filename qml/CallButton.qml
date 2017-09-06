@@ -11,10 +11,7 @@ Button{
     property string fontFamily : "IonIcons"
     property var glyph : Ionicons.Icon.person_add
     property string buttonColor: "#1f1f1f"
-    style: ButtonStyle {
-        roundedButton: true
-        bgColor: buttonColor
-    }
+
     width: size.dp(86)
     height: width
     Text {
