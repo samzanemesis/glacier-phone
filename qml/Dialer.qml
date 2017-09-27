@@ -100,8 +100,14 @@ Item {
                 source: "image://theme/window-close"
                 opacity: 0.75
             }
-            onClicked: {
-                dialedNumber.remove(dialedNumber.cursorPosition-1,dialedNumber.cursorPosition)
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    dialedNumber.remove(dialedNumber.cursorPosition-1,dialedNumber.cursorPosition)
+                }
+                onPressAndHold: {
+                    dialedNumber.text = ""
+                }
             }
         }
 
