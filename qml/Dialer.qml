@@ -4,9 +4,6 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
 
-import "js/fontawesome.js" as FontAwesome
-import "js/ionicons.js" as Ionicons
-
 Item {
     width: parent.width
     height: size.dp(530+76)
@@ -28,33 +25,28 @@ Item {
             anchors.bottom: parent.bottom
             width: parent.width
             height: size.dp(24 + 86)
-            Item{
-                width: parent.width*0.66666
-                height: parent.height
-                Button{
-                    anchors.horizontalCenter: parent.horizontalCenter
 
-                    width: size.dp(256)
-                    height: size.dp(86)
-                    Text {
-                        anchors.centerIn: parent
-                        font.pointSize: 52
-                        font.family: "FontAwesome"
-                        text: FontAwesome.Icon.Phone
-                        color: "white"
-                    }
+            Button{
+                id: callButton
+                width: parent.width/2
+                height: size.dp(86)
+                Image {
+                    anchors.centerIn: parent
+                    width: 52
+                    height: 52
+                    source: "image://theme/phone"
                 }
             }
 
             Button{
-                width: size.dp(86)
+                width: parent.width/2
                 height: size.dp(86)
-                Text {
+                anchors.left:callButton.right
+                Image {
+                    width: 42
+                    height: 42
                     anchors.centerIn: parent
-                    font.pointSize: 42
-                    font.family: "Ionicons"
-                    text: Ionicons.Icon.person_add
-                    color: "white"
+                    source: "image://theme/user"
                     opacity: 0.5
                 }
             }
@@ -76,13 +68,11 @@ Item {
 
             width: parent.height
             height: width
-
-            Text {
+            Image {
                 anchors.centerIn: parent
-                font.pointSize: 32
-                font.family: "FontAwesome"
-                text: FontAwesome.Icon.Phone
-                color: "white"
+                width: 32
+                height: 32
+                source: "image://theme/phone"
                 opacity: 0.75
             }
         }
@@ -103,24 +93,16 @@ Item {
             width: parent.height
             height: width
 
-            Text {
+            Image {
+                width: 32
+                height: 32
                 anchors.centerIn: parent
-                font.pointSize: 32
-                font.family: "Ionicons"
-                text: Ionicons.Icon.backspace
-                color: "white"
+                source: "image://theme/window-close"
                 opacity: 0.75
             }
             onClicked: {
                 dialedNumber.remove(dialedNumber.cursorPosition-1,dialedNumber.cursorPosition)
             }
-        }
-
-        FontLoader {
-            source: "/usr/share/glacier-phone/res/fontawesome-webfont.ttf"
-        }
-        FontLoader {
-            source: "/usr/share/glacier-phone/res/ionicons.ttf"
         }
 
         Component {

@@ -4,20 +4,10 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
 
-import "js/fontawesome.js" as FontAwesome
-import "js/ionicons.js" as Ionicons
-
 Rectangle{
 
     anchors.fill: parent
     color: "#151515"
-
-    FontLoader {
-        source: "/usr/share/glacier-phone/res/fontawesome-webfont.ttf"
-    }
-    FontLoader {
-        source: "/usr/share/glacier-phone/res/ionicons.ttf"
-    }
 
     Rectangle{
         id: header
@@ -74,12 +64,12 @@ Rectangle{
                  }
                  width: size.dp(256)
                  height: size.dp(86)
-                 Text {
+                 Image {
+                     source: "image://theme/phone"
+                     width: 52
+                     height: 52
                      anchors.centerIn: parent
-                     font.pointSize: 52
-                     font.family: "FontAwesome"
-                     text: FontAwesome.Icon.Phone
-                     color: "white"
+
                      transform: Rotation {
                          origin.x: size.dp(26)
                          origin.y: size.dp(35)
@@ -99,15 +89,13 @@ Rectangle{
                      anchors.fill: parent
                      spacing: (parent.width - size.dp(86))/2 - size.dp(86) //Change "2" to numbuttons - 1
                      CallButton{
-                         fontFamily: "FontAwesome"
-                         glyph: FontAwesome.Icon.VolumeUp
+                         icon: "image://theme/volume-up"
                      }
                      CallButton{
-                         fontFamily: "FontAwesome"
-                         glyph: "\uf131"
+                         icon: "image://theme/microphone-slash"
                      }
                      CallButton{
-                         glyph: Ionicons.Icon.ios_keypad
+                         icon: "image://theme/th"
                      }
                  }
 

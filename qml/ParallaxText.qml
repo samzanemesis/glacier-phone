@@ -12,6 +12,7 @@ Text {
     text: labelText
     color: "white"
     font.pointSize: 16
+    font.capitalization: Font.AllUppercase
     opacity: 0.5
 
     x: {
