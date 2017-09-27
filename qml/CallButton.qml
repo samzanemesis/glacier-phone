@@ -4,10 +4,7 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
 
-import "js/ionicons.js" as Ionicons
-
 Button{
-    property string fontFamily : "IonIcons"
     property string icon : "image://theme/user"
     property string buttonColor: "#1f1f1f"
 

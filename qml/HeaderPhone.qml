@@ -4,8 +4,6 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
 
-import "js/ionicons.js" as Ionicons
-
 // Currently qtquickcontrols-nemo isn't very malleable nor customizable,
 // this will be changed properly in time
 Rectangle {
