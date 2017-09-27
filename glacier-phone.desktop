@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Icon=glacier-phone
+Icon=/usr/share/icons/hicolor/256x256/apps/glacier-phone.png
 Exec=glacier-phone
 Name=Phone
 # translation example:

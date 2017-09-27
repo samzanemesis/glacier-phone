@@ -1,21 +1,29 @@
 TARGET = glacier-phone
-
+target.path = /usr/bin
 SOURCES += src/glacier-phone.cpp
 
+desktop.files = glacier-phone.desktop
+desktop.path = /usr/share/applications
+
+qml.files = qml/*.qml
+qml.path = /usr/share/glacier-phone/qml
+
+res.files = qml/res/*
+res.path = /usr/share/glacier-phone/res
+
+icons.files = icons/256x256/glacier-phone.png
+icons.path = /usr/share/icons/hicolor/256x256/apps
+
 OTHER_FILES += qml/glacier-phone.qml \
-    qml/cover/CoverPage.qml \
     qml/pages/SecondPage.qml \
     rpm/glacier-phone.spec \
-    translations/*.ts \
-    glacier-phone.desktop
+    translations/*.ts
+
+INSTALLS += target desktop qml icons res
 
 TRANSLATIONS += translations/glacier-phone-de.ts
 
 DISTFILES += \
-    qml/js/fontawesome.js \
-    qml/js/ionicons.js \
-    qml/res/fontawesome-webfont.ttf \
-    qml/res/ionicons.ttf \
     qml/Dialpad.qml \
     qml/Dialer.qml \
     qml/CallButton.qml \
