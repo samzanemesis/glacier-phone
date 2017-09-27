@@ -9,6 +9,10 @@ Item{
     width: size.dp(480)
     height: size.dp(360)
 
+    property int positon: 0
+    property bool replace: false
+    property string string: ""
+
     anchors{
         top: parent.top
         topMargin: size.dp(32)
@@ -22,14 +26,25 @@ Item{
         Repeater {
             model: dialerModel
             delegate: Button {
-                style: ButtonStyle {
-                    roundedButton: true
-                    bgColor: "transparent"
-                }
+
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                onClicked: {
-                    dialedNumber.insert(dialedNumber.cursorPosition,model.digit)
+                MouseArea{
+                    anchors.fill: parent
+
+                    onClicked: {
+                        dialedNumber.insert(dialedNumber.cursorPosition,model.digit)
+                    }
+
+                    onPressAndHold: {
+                        string = model.T9
+                        replaceTimer.start()
+                    }
+                    onReleased: {
+                        replaceTimer.stop()
+                        positon = 0
+                        replace = false
+                    }
                 }
                 Item{
                     height: parent.height
@@ -54,29 +69,6 @@ Item{
                             opacity: 0.5
                         }
                     }
-
-                    /*Text {
-                        font.pointSize: 40
-                        color: "white"
-                        text: model.digit
-                        height: parent.height
-                        width: parent.width
-                        verticalAlignment: Text.AlignVCenter
-                        horizontalAlignment: Text.AlignHCenter
-                        font.weight: Font.Light
-                        Text {
-                            font.pointSize: 12
-                            color: "white"
-                            text: model.T9
-                            height: parent.paintedHeight
-                            width: parent.width
-                            font.weight: Font.Light
-                            verticalAlignment : Text.AlignBottom
-                            horizontalAlignment: Text.AlignHCenter
-                            y: size.dp(24)
-                            opacity: 0.5
-                        }
-                    }*/
                 }
             }
         }
@@ -133,6 +125,23 @@ Item{
             digit: "#"
             T9: ""
         }
+    }
 
+    Timer{
+        id: replaceTimer
+        repeat: true
+        interval: 800
+        onTriggered: {
+            if(positon > string.length)
+            {
+                positon = 0
+            }
+            if(positon != 0){
+                dialedNumber.remove(dialedNumber.cursorPosition-1,dialedNumber.cursorPosition)
+            }
+            dialedNumber.insert(dialedNumber.cursorPosition, string.substring(positon,positon+1))
+            positon++
+            replace = true
+        }
     }
 }

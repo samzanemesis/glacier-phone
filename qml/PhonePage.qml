@@ -4,18 +4,7 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
 
-import "js/fontawesome.js" as FontAwesome
-import "js/ionicons.js" as Ionicons
-
 Page {
-
-    FontLoader {
-        source: "res/fontawesome-webfont.ttf"
-    }
-    FontLoader {
-        source: "res/ionicons.ttf"
-    }
-
     anchors.fill: parent
 
     HeaderPhone{

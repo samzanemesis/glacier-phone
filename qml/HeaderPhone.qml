@@ -4,9 +4,6 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
 
-import "js/fontawesome.js" as FontAwesome
-import "js/ionicons.js" as Ionicons
-
 // Currently qtquickcontrols-nemo isn't very malleable nor customizable,
 // this will be changed properly in time
 Rectangle {
@@ -15,7 +12,6 @@ Rectangle {
     height: size.dp(75)
 
     color: "#212121"
-
 
     z: 200
 
@@ -60,12 +56,11 @@ Rectangle {
 
         CallButton{
             width: parent.height
-            fontFamily : "FontAwesome"
-            glyph: "\uf142"
+            icon: "image://theme/user"
         }
         CallButton{
             width: parent.height
-            glyph: Ionicons.Icon.search
+            icon: "image://theme/search"
         }
 
     }

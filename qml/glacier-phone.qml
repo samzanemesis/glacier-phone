@@ -1,6 +1,4 @@
 /*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -33,8 +31,6 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 import QtQuick.Layouts 1.0
-
-
 
 ApplicationWindow
 {

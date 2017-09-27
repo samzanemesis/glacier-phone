@@ -1,35 +1,29 @@
 TARGET = glacier-phone
-
-CONFIG += sailfishapp
-
+target.path = /usr/bin
 SOURCES += src/glacier-phone.cpp
 
+desktop.files = glacier-phone.desktop
+desktop.path = /usr/share/applications
+
+qml.files = qml/*.qml
+qml.path = /usr/share/glacier-phone/qml
+
+res.files = qml/res/*
+res.path = /usr/share/glacier-phone/res
+
+icons.files = icons/256x256/glacier-phone.png
+icons.path = /usr/share/icons/hicolor/256x256/apps
+
 OTHER_FILES += qml/glacier-phone.qml \
-    qml/cover/CoverPage.qml \
     qml/pages/SecondPage.qml \
-    rpm/glacier-phone.changes.in \
     rpm/glacier-phone.spec \
-    rpm/glacier-phone.yaml \
-    translations/*.ts \
-    glacier-phone.desktop
+    translations/*.ts
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+INSTALLS += target desktop qml icons res
 
-# to disable building translations every time, comment out the
-# following CONFIG line
-CONFIG += sailfishapp_i18n
-
-# German translation is enabled as an example. If you aren't
-# planning to localize your app, remember to comment out the
-# following TRANSLATIONS line. And also do not forget to
-# modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/glacier-phone-de.ts
 
 DISTFILES += \
-    qml/js/fontawesome.js \
-    qml/js/ionicons.js \
-    qml/res/fontawesome-webfont.ttf \
-    qml/res/ionicons.ttf \
     qml/Dialpad.qml \
     qml/Dialer.qml \
     qml/CallButton.qml \
